@@ -5,7 +5,8 @@ import { TodoItem } from './components/TodoItem'
 import { FilterButton } from './components/FilterButton'
 
 function App() {
-  const [] = useState(0)
+  
+
 
   return (
         <div className="app-container">
