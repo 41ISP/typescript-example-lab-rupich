@@ -1,14 +1,18 @@
+import type { ITodo } from "../App"
 import { TodoItem } from "./TodoItem"
 
-interface IListProps{
+interface IListProps {
     todos: ITodo[]
+    toggleTodo: (id: number) => void
+    handleDelete: (id: number) => void
 }
 
-export const TodoList = ({todos}: IListProps) => {
+export const TodoList = ({handleDelete, todos, toggleTodo}: IListProps) => {
+
     return (
-       <ul className="todo-list">
-       {todos.map(todo =>(
-       <TodoItem todo={todo} />))}
-       </ul>
+        <ul className="todo-list">
+            {todos.map(el => (
+                <TodoItem handleDelete={handleDelete} toggleTodo={toggleTodo} {...el} />))}
+        </ul>
     )
 }
